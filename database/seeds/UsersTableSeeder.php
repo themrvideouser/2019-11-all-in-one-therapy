@@ -29,6 +29,8 @@ class UsersTableSeeder extends Seeder
                 'name' => Str::random(10),
                 'password' => Str::random(10),
                 'email' => Str::random(10),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
             ]
         );
 
