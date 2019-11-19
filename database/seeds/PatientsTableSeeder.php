@@ -26,7 +26,6 @@ class PatientsTableSeeder extends Seeder
             $email = strtolower($firstname) . "." . strtolower($lastname) . "@example.com";
             $city = Arr::random(['Wien', 'St. Pölten', 'Eisenstadt', 'Graz', 'Innsbruck', 'Klagenfurt', 'Bregenz', 'Salzburg', 'Linz']);
             $address = strtoupper(Str::random(1)) . strtolower(Str::random(4)) . "gasse 1/1";
-            $country = "Österreich";
 
             $patient = new Patient();
             $patient->firstname = $firstname;
@@ -36,7 +35,6 @@ class PatientsTableSeeder extends Seeder
             $patient->email = $email;
             $patient->city = $city;
             $patient->address = $address;
-            $patient->country = $country;
             $patient->save();
         }
     }
