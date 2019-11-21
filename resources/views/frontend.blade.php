@@ -3,11 +3,22 @@
 @section('title', 'Welcome')
 
 @section('top-links')
-    <a href="/contact">Kontakt</a>
-    <a href="/services">Leistungen</a>
-    <a href="/prices">Preise</a>
-    <a href="/appointment">Termine</a>
-    <a href="/about-us">Über uns</a>
+    <a type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne">
+        Kontakt
+    </a>
+    <a type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo">
+        Leistungen
+    </a>
+    <a type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseThree">
+        Preise
+    </a>
+    <a type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseFour">
+        Termine
+    </a>
+    <a type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseFive">
+        Über uns
+    </a>
+
     |
     @auth
         <a href="/backend">Backend</a>
@@ -23,6 +34,7 @@
 
     Willkomen auf AIOT
     <div class="accordion" id="myAccordion">
+
         <div class="card">
             <div class="card-header" id="headingOne">
                 <h2 class="mb-0">
