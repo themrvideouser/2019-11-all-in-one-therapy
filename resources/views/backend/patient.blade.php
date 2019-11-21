@@ -43,7 +43,8 @@
             @enderror
             <p>
                 <label>E-Mail:</label>
-                <input type="text" name="email" value="{{$patient ? $patient->email : old('email')}}" placeholder="E-Mail">
+                <input type="text" name="email" value="{{$patient ? $patient->email : old('email')}}"
+                       placeholder="E-Mail">
             </p>
             @error('svnr')
             <p class="validation-error">{{ $message }}</p>
@@ -70,9 +71,10 @@
                 <label></label>
                 <input type="text" name="plz" value="{{$patient ? $patient->plz : old('plz')}}" placeholder="PLZ">
                 <input type="text" name="city" value="{{$patient ? $patient->city : old('city')}}" placeholder="Stadt">,
-                <br />
+                <br/>
                 <label></label>
-                <input type="text" name="country" value="{{$patient ? $patient->country: old('country')}}" placeholder="Land">
+                <input type="text" name="country" value="{{$patient ? $patient->country: old('country')}}"
+                       placeholder="Land">
             </p>
             <p>
                 <button type="submit">{{ $patient ? 'Anlegen' : 'Speichern' }}</button>

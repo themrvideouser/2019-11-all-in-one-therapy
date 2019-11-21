@@ -19,17 +19,18 @@
                         {{ $documentation->created_at->toDateString() }}
                     </td>
                     <td>
-                        {{ $documentation->patient->firstname }} {{ $documentation->patient->lastname }}, {{ $documentation->patient->svnr }}
+                        {{ $documentation->patient->firstname }} {{ $documentation->patient->lastname }}
+                        , {{ $documentation->patient->svnr }}
                     </td>
                     <td>
                         {{ $documentation->text }}
                     </td>
                 </tr>
-            @endforeach
+                @endforeach
         </table>
     @else
         <p>Keine Dokumentation vorhanden.</p>
     @endif
     <p>
-    {{ $documentations->links() }}</p>
+        {{ $documentations->links() }}</p>
 @endsection

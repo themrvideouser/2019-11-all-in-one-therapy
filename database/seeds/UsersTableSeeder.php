@@ -44,14 +44,14 @@ class UsersTableSeeder extends Seeder
                 'roles' => ['patient'],
 //                'patient' => '1234010183',
             ],
-    ];
+        ];
 
         foreach ($users as $userName => $userData) {
             $user = new User();
             $user->name = $userName;
             $user->email = $userData['email'];
             $user->password = Hash::make($userData['password']);
-            if(array_key_exists('patient', $userData)) {
+            if (array_key_exists('patient', $userData)) {
                 $patient = Patient::where('svnr', $userData['patient'])->firstOrFail();
                 $user->patient()->associate($patient);
             }

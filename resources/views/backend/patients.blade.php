@@ -33,10 +33,10 @@
                         <a href="{{ request()->fullUrlWithQuery(['orderBy' => 'svnr', 'orderDirection' => $orderDirection]) }}">SVNr</a>
                     </th>
                 @endif
-                    @if ($orderBy == 'address')
-                <th>
-                    <a href="{{ request()->fullUrlWithQuery(['orderBy' => 'address', 'orderDirection' => $inverseOrderDirection]) }}">Adresse {!! $orderDirectionIndicator !!}</a>
-                </th>
+                @if ($orderBy == 'address')
+                    <th>
+                        <a href="{{ request()->fullUrlWithQuery(['orderBy' => 'address', 'orderDirection' => $inverseOrderDirection]) }}">Adresse {!! $orderDirectionIndicator !!}</a>
+                    </th>
                 @else
                     <th>
                         <a href="{{ request()->fullUrlWithQuery(['orderBy' => 'address', 'orderDirection' => $orderDirection]) }}">Adresse</a>

@@ -7,7 +7,7 @@
             @csrf
             @if ($errors->has('name'))
                 <p class="validation-failed">
-                    {{ $errors->first('name') }}<br/>
+                {{ $errors->first('name') }}<br/>
                     <input class="validation-failed" placeholder="Username" type="text" name="name" value="{{ old('name') }}">
                 </p>
             @else

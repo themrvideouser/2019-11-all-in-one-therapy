@@ -6,11 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Documentation extends Model
 {
-    public function user() {
+    public function user()
+    {
         return $this->belongsTo('App\User', 'user_id');
     }
 
-    public function patient() {
+    public function patient()
+    {
         return $this->belongsTo('App\Patient', 'patient_id');
     }
 }

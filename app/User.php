@@ -37,8 +37,17 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function documentations() {
+    public function documentations()
+    {
         return $this->hasMany('App\Documentation');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function roles()
+    {
+        return $this->belongsToMany('App\Role');
     }
 
     public function addRole(string $roleName): void
@@ -51,9 +60,20 @@ class User extends Authenticatable
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     * @param string $permissionName
+     * @return bool
      */
-    public function roles() {
-        return $this->belongsToMany('App\Role');
+    public function hasPermission(string $permissionName): bool
+    {
+        $hasPermission = false;
+
+        foreach ($this->roles as $role) {
+            if ($role->hasPermission($permissionName)) {
+                $hasPermission = true;
+                break;
+            }
+        }
+        return $hasPermission;
     }
+
 }

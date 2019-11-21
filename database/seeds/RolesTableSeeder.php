@@ -31,16 +31,16 @@ class RolesTableSeeder extends Seeder
 
         /* assign permissions and roles to variables for easier association: */
 
-        $loginPermission = Permission::where('name','login')->first();
+        $loginPermission = Permission::where('name', 'login')->first();
         $ownDataPermission = Permission::where('name', 'view-own-data')->first();
-        $adminPatientPermission = Permission::where('name','admin-patient')->first();
-        $adminCalendarPermission = Permission::where('name','admin-calendar')->first();
-        $adminDocumentationPermission = Permission::where('name','admin-documentation')->first();
+        $adminPatientPermission = Permission::where('name', 'admin-patient')->first();
+        $adminCalendarPermission = Permission::where('name', 'admin-calendar')->first();
+        $adminDocumentationPermission = Permission::where('name', 'admin-documentation')->first();
 
-        $patientRole=Role::where('name', 'patient')->first();
-        $assistantRole=Role::where('name', 'assistant')->first();
-        $therapistRole=Role::where('name', 'therapist')->first();
-        $adminRole=Role::where('name', 'admin')->first();
+        $patientRole = Role::where('name', 'patient')->first();
+        $assistantRole = Role::where('name', 'assistant')->first();
+        $therapistRole = Role::where('name', 'therapist')->first();
+        $adminRole = Role::where('name', 'admin')->first();
 
         /* associate permissions and roles: */
 

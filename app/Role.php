@@ -9,15 +9,33 @@ class Role extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function users() {
+    public function users()
+    {
         return $this->belongsToMany('App\User');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function permissions() {
+    public function permissions()
+    {
         return $this->belongsToMany('App\Permission');
     }
 
+    /**
+     * @param string $permissionName
+     * @return bool
+     */
+    public function hasPermission(string $permissionName): bool
+    {
+        $hasPermission = false;
+
+        foreach ($this->permissions as $permission) {
+            if($permission->name == $permissionName) {
+                $hasPermission = true;
+                break;
+            }
+        }
+        return $hasPermission;
+    }
 }
