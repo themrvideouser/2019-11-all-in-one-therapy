@@ -40,4 +40,20 @@ class User extends Authenticatable
     public function documentations() {
         return $this->hasMany('App\Documentation');
     }
+
+    public function addRole(string $roleName): void
+    {
+//        echo "roleName={$roleName}";
+        $role = Role::where('name', $roleName)->first();
+//        print_r($role);
+//        echo "role->id={$role->id}";
+        $this->roles()->save($role);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function roles() {
+        return $this->belongsToMany('App\Role');
+    }
 }
