@@ -18,9 +18,8 @@
     <a type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseFive">
         Über uns
     </a>
-
-    |
     @auth
+        |
         <a href="/backend">Backend</a>
     @endauth
 @endsection
