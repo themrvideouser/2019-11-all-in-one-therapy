@@ -102,7 +102,7 @@ if (isset($_GET["field"])) {
     <table class="table table-dark">
         <tr>
 
-            <th><a href="?page={{$page}}&field=svnr">SVNr <i
+            <th><a href="?page={{$page}}&field=svnr">SVNr <i alt="up"
                         class='fa fa-sort-@isset($pfeil["svnr"]){{$pfeil["svnr"]}}@endisset'></i></a> </th>
             <th class="text-left"><a href="?page={{$page}}&field=lastname">Name <i
                         class='fa fa-sort-@isset($pfeil["lastname"]){{$pfeil["lastname"]}}@endisset'></i></a> </th>
